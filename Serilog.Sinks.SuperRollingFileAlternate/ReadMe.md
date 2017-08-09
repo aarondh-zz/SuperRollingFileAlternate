@@ -35,7 +35,7 @@ logs\20160701-00002.txt
 
 There are three "built in" file formats that can be specified with the `format` parameter.
 
-* SuperRollingFileAlternateFormats.Json
+* SuperRollingFileAlternateFormats.Jsonserilog 
 * SuperRollingFileAlternateFormats.CompactJson
 * SuperRollingFileAlternateFormats.Text
 
@@ -43,7 +43,7 @@ There are three "built in" file formats that can be specified with the `format` 
 This format utilizes the Serilog JsonFormatter. Then you specify the Json you can also specify true or false in the `renderMessage` parameter to turn on or off the rendering of the message in the json stream.
 
 #### CompactJson
-This format utilizes the Serilog.Formatting.CompactJson.CompactJsonFormatter pacakge, this format greatly reduces the size of events by simplifying the Json generated.  Good for high volumn event logging.
+This format utilizes the [Serilog.Formatting.Compact](https://github.com/serilog/serilog-formatting-compact) package, this format greatly reduces the size of events by simplifying the Json generated.  Good for high volumn event logging.
 
 #### Text
 This is the default format.  It uses the serilog "build in" MessageTemplateTextFormatter.  When using this option, the output template is specified using the `outputTemplate` parameter.
@@ -69,7 +69,7 @@ When the `format` parameter is set to SuperRollingFileAlternateFormats.Json, thi
 
 ### async
 
-The `async` parameter specifies that the superRollingFileAlternate sink should be wrapped in the Serilog.Sinks.Async function which causes logs to be written to disk on a background thread.  The default is false.
+The `async` parameter specifies that the superRollingFileAlternate sink should be wrapped in the [Serilog.Sinks.Async](https://github.com/serilog/serilog-sinks-async) function which causes logs to be written to disk on a background thread.  The default is false.
 
 ### outputTemplate
 
