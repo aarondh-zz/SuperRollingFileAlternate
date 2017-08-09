@@ -11,7 +11,7 @@ using System.Text;
 
 namespace Serilog.Sinks.JsonRollingFileAlternate
 {
-    public enum JsonRollingFileFormats
+    public enum SuperRollingFileAlternateFormats
     {
         Text,
         Json,
@@ -26,7 +26,7 @@ namespace Serilog.Sinks.JsonRollingFileAlternate
             this LoggerSinkConfiguration configuration,
             string logDirectory, 
             string logFilePrefix = "",
-            JsonRollingFileFormats format = JsonRollingFileFormats.Text,
+            SuperRollingFileAlternateFormats format = SuperRollingFileAlternateFormats.Text,
             ITextFormatter formatter = null,
             LogEventLevel minimumLevel = LevelAlias.Minimum,
             long fileSizeLimitBytes = DefaultFileSizeLimitBytes,
@@ -41,13 +41,13 @@ namespace Serilog.Sinks.JsonRollingFileAlternate
             {
                 switch (format)
                 {
-                    case JsonRollingFileFormats.Json:
+                    case SuperRollingFileAlternateFormats.Json:
                         formatter = new JsonFormatter(renderMessage: renderMessage);
                         break;
-                    case JsonRollingFileFormats.CompactJson:
+                    case SuperRollingFileAlternateFormats.CompactJson:
                         formatter = new CompactJsonFormatter();
                         break;
-                    case JsonRollingFileFormats.Text:
+                    case SuperRollingFileAlternateFormats.Text:
                     default:
                         formatter = new MessageTemplateTextFormatter(outputTemplate, formatProvider);
                         break;
