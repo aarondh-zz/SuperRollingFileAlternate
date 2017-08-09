@@ -3,7 +3,7 @@
 This is a rolling file sink that is an extension to [Serilog.Sinks.RollingFileAlternate](https://github.com/BedeGaming/sinks-rollingfile) that allows you to easily configure async, log file prefix, and formatters.  Including the ability to specify renderMessage to the JsonFormatter.  Note that this project does not replace RollingFileAlternate, rather it is an addtional extension that uses Serilog.Sinks.RollingFileAlternate, and Serilog.Sinks.Async, the new Serilog.Formatting.Compact packages to make configuring enterprise suitable logs.
 
 
-### Getting started
+## Getting started
 
 Install the [Serilog.Sinks.RollingFileAlternate](https://nuget.org/packages/serilog.sinks.superRollingFileAlternate) package from NuGet:
 
@@ -30,6 +30,14 @@ logs\20160701-00002.txt
 ```
 
 > **Important:** Only one process may write to a log file at a given time. For multi-process scenarios, either use separate files or [one of the non-file-based sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks).
+
+## Parameters
+
+The following parameters can be set via code or using the AppSettings (if the Serilog.AppSettings package is installed, see below)
+
+###logDirectory
+
+The `logDirectory` parameter specifies where the log file sets will be written to.  There is no default.
 
 ### Format
 
