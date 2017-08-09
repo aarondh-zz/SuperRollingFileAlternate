@@ -1,6 +1,6 @@
 ﻿# Serilog Super Rolling File Sink (super roll-on-file-size alternative) [![NuGet Version](http://img.shields.io/nuget/v/Serilog.Sinks.SuperRollingFileAlternate.svg?style=flat)](https://www.nuget.org/packages/Serilog.Sinks.SuperRollingFileAlternate/)
 
-This is a rolling file sink that is an extension to [Serilog.Sinks.RollingFileAlternate](https://github.com/BedeGaming/sinks-rollingfile) that allows you to easily configure async, log file prefix, and formatters.  Including the ability to specify renderMessage to the JsonFormatter.  Note that this project does not replace RollingFileAlternate, rather it is an addtional extension that uses Serilog.Sinks.RollingFileAlternate, and Serilog.Sinks.Async, the new Serilog.Formatting.Compact packages to make configuring enterprise suitable logs.",
+This is a rolling file sink that is an extension to [Serilog.Sinks.RollingFileAlternate](https://github.com/BedeGaming/sinks-rollingfile) that allows you to easily configure async, log file prefix, and formatters.  Including the ability to specify renderMessage to the JsonFormatter.  Note that this project does not replace RollingFileAlternate, rather it is an addtional extension that uses Serilog.Sinks.RollingFileAlternate, and Serilog.Sinks.Async, the new Serilog.Formatting.Compact packages to make configuring enterprise suitable logs.
 
 
 ### Getting started
@@ -35,17 +35,17 @@ logs\20160701-00002.txt
 
 There are three "built in" file formats that can be specified with the `format` parameter.
 
-* SuperRollingFileAlternateFormats.Jsonserilog 
+* SuperRollingFileAlternateFormats.Json 
 * SuperRollingFileAlternateFormats.CompactJson
 * SuperRollingFileAlternateFormats.Text
 
-#### Json
+#### SuperRollingFileAlternateFormats.Json
 This format utilizes the Serilog JsonFormatter. Then you specify the Json you can also specify true or false in the `renderMessage` parameter to turn on or off the rendering of the message in the json stream.
 
-#### CompactJson
+#### SuperRollingFileAlternateFormats.CompactJson
 This format utilizes the [Serilog.Formatting.Compact](https://github.com/serilog/serilog-formatting-compact) package, this format greatly reduces the size of events by simplifying the Json generated.  Good for high volumn event logging.
 
-#### Text
+#### SuperRollingFileAlternateFormats.Text
 This is the default format.  It uses the serilog "build in" MessageTemplateTextFormatter.  When using this option, the output template is specified using the `outputTemplate` parameter.
 
 ### Formatter
@@ -56,22 +56,22 @@ The `formatter` parameter provides the ability to specify custom serilog formatt
 The `formatProvider` parameter allows you to specify the serilog format provider, used by the MessageTemplateTextFormatter when the `format` parameter is set to SuperRollingFileAlternateFormats.Text
 
 
-### mimimumLevel
-Specifies the minimum level of logging to this sink.  The default is LevelAlias.Minimum.
+### Mmimum Level
+The `formatProvider` parameter specifies the minimum level of logging to this sink.  The default is LevelAlias.Minimum.
 
-### retainedFileCountLimit
+### Retained File Count Limit
 
-Specifies the maximum number of log files to retain.  The default is 31 files.  (One month of the files if the fileSizeLimitBytes is set high enough)
+The `retainedFileCountLimit` parameter specifies the maximum number of log files to retain.  The default is 31 files.  (One month of the files if the fileSizeLimitBytes is set high enough)
 
-### renderMessage
+### Render Message
 
-When the `format` parameter is set to SuperRollingFileAlternateFormats.Json, this parameter is passed to the JsonFormatter to turn on or off the rendering of message to the log file.  The default is false.
+When the `format` parameter is set to SuperRollingFileAlternateFormats.Json, the `renderMessage` parameter is passed to the JsonFormatter to turn on or off the rendering of message to the log file.  The default is false.
 
-### async
+### Async
 
 The `async` parameter specifies that the superRollingFileAlternate sink should be wrapped in the [Serilog.Sinks.Async](https://github.com/serilog/serilog-sinks-async) function which causes logs to be written to disk on a background thread.  The default is false.
 
-### outputTemplate
+### Output Template
 
 When the `format` parameter is set to SuperRollingFileAlternateFormats.Text, the `outputTemplate` parameter specifies the text template to be used to format the log.  
 The default is set to 
@@ -126,15 +126,12 @@ var log = new LoggerConfiguration()
 ```XML
 <appSettings> 
     . . .
-    <add key="serilog:minimum-level" value="Debug" />
+    <add key="serilog:minimum-level" value="Information" />
     <add key="serilog:using:SuperRollingFileAlternate" value="Serilog.Sinks.SuperRollingFileAlternate" />
-    <add key="serilog:write-to:SuperRollingFileAlternate.logDirectory" value=“.\logs" />
+    <add key="serilog:write-to:SuperRollingFileAlternate.logDirectory" value=".\logs" />
     <add key="serilog:write-to:SuperRollingFileAlternate.logFilePrefix" value="Consto.ExpressOrder.WebApi" />
-    <add key="serilog:writeto:SuperRollingFileAlternate.formatter" 
-       value="Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact" />
-    <add key="serilog:write-to:SuperRollingFileAlternate.restrictedToMinimumLevel" value="Debug" />
-    <add key="serilog:enrich:with-property:Title" value="APILog" />
-    <add key="serilog:enrich:with-property:Category" value="ExpressOrder" /> 
+    <add key="serilog:writeto:SuperRollingFileAlternate.format" value="CompactJson" />
+    <add key="serilog:write-to:SuperRollingFileAlternate.restrictedToMinimumLevel" value="Information" />
 . . .
 </appSettings>
 ```
