@@ -1,4 +1,4 @@
-﻿# Serilog Super Rolling File Sink (roll-on-file-size alternative) [![NuGet Version](http://img.shields.io/nuget/v/Serilog.Sinks.SuperRollingFileAlternate.svg?style=flat)](https://www.nuget.org/packages/Serilog.Sinks.SuperRollingFileAlternate/)
+﻿# Serilog Super Rolling File Sink (super roll-on-file-size alternative) [![NuGet Version](http://img.shields.io/nuget/v/Serilog.Sinks.SuperRollingFileAlternate.svg?style=flat)](https://www.nuget.org/packages/Serilog.Sinks.SuperRollingFileAlternate/)
 
 This is a rolling file sink that is an extension to [Serilog.Sinks.RollingFileAlternate](https://github.com/BedeGaming/sinks-rollingfile) that allows you to easily configure async, log file prefix, and formatters.  Including the ability to specify renderMessage to the JsonFormatter.  Note that this project does not replace RollingFileAlternate, rather it is an addtional extension that uses Serilog.Sinks.RollingFileAlternate, and Serilog.Sinks.Async, the new Serilog.Formatting.CompactJson projects to make configuring enterprise suitable logs.",
 
