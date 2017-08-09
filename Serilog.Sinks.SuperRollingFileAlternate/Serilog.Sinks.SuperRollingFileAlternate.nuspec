@@ -6,12 +6,12 @@
     <title>Super Rolling File Alternate</title>
     <authors>Aaron G Daisley-Harrison</authors>
     <owners>Aaron G Daisley-Harrison</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <licenseUrl>https://github.com/aarondh/SuperRollingFileAlternate/Serilog.Sinks.SuperRollingFileAlternate/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/aarondh/SuperRollingFileAlternate</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Enterprise extensions to Serilog.Sinks.RollingFileAlternate</summary>
     <description>
-      This is a rolling file sink that is an extension to <a href="https://github.com/BedeGaming/sinks-rollingfile">Serilog.Sinks.RollingFileAlternate</a> that allows you to easily configure async, log file prefix, and formatters.  Including the ability to specify renderMessage to the JsonFormatter.  Note that this project does not replace RollingFileAlternate, rather it is an addtional extension that uses Serilog.Sinks.RollingFileAlternate, and Serilog.Sinks.Async, the new Serilog.Formatting.CompactJson projects to make configuring enterprise suitable logs.",
+      This is a rolling file sink that is an extension to Serilog.Sinks.RollingFileAlternate that allows you to easily configure async, log file prefix, and formatters.  Including the ability to specify renderMessage to the JsonFormatter.  Note that this project does not replace RollingFileAlternate, rather it is an addtional extension that uses Serilog.Sinks.RollingFileAlternate, and Serilog.Sinks.Async, the new Serilog.Formatting.CompactJson projects to make configuring enterprise suitable logs.",
     </description>
     <releaseNotes>First release.</releaseNotes>
     <copyright>Copyright 2017</copyright>
