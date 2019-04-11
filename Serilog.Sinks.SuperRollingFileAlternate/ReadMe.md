@@ -138,7 +138,7 @@ var log = new LoggerConfiguration()
     <add key="serilog:using:SuperRollingFileAlternate" value="Serilog.Sinks.SuperRollingFileAlternate" />
     <add key="serilog:write-to:SuperRollingFileAlternate.logDirectory" value=".\logs" />
     <add key="serilog:write-to:SuperRollingFileAlternate.logFilePrefix" value="Consto.ExpressOrder.WebApi" />
-    <add key="serilog:writeto:SuperRollingFileAlternate.format" value="CompactJson" />
+    <add key="serilog:write-to:SuperRollingFileAlternate.format" value="CompactJson" />
     <add key="serilog:write-to:SuperRollingFileAlternate.restrictedToMinimumLevel" value="Information" />
 . . .
 </appSettings>
