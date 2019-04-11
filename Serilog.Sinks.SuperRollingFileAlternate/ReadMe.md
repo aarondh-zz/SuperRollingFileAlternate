@@ -64,7 +64,7 @@ The `formatter` parameter provides the ability to specify custom serilog formatt
 The `formatProvider` parameter allows you to specify the serilog format provider, used by the MessageTemplateTextFormatter when the `format` parameter is set to SuperRollingFileAlternateFormats.Text
 
 
-### Mmimum Level
+### Minimum Level
 The `formatProvider` parameter specifies the minimum level of logging to this sink.  The default is LevelAlias.Minimum.
 
 ### Retained File Count Limit
